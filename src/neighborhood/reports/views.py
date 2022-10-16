@@ -1,16 +1,19 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from .forms import NewReportForm
+from .models import Report
 from django.contrib import messages
 
 class IndexView(View):
+    template_name = 'reports/reports.html'
+
     def get(self, request):
-        reports = NewReportForm.objects.all()
+        reports = Report.objects.all()
 
         ctx = {
             'reports': reports,
         }
-        return render(request, 'reports', context=ctx)
+        return render(request, self.template_name, context=ctx)
 
 class AContactView(View):
 

@@ -1,6 +1,19 @@
 {% extends "reports/base.html" %}
 
 {% block content %}
-    <h2>Content for My App</h2>
-    <p>Stuff etc etc.</p>
+    <div id="cart">
+        Zawartość koszyka:
+        {% if request.session.cart %}
+            <ul>
+            {% for reports_id, reports_value in request.session.cart.items %}
+                <li>
+                    {{ reports_value.product_name }}, lokalizacja: {{ reports_value.location }}
+                     plusy: {{ product_value.product_value }} )
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <i>Koszyk jest pusty</i>
+        {% endif %}
+    </div>
 {% endblock content %}
