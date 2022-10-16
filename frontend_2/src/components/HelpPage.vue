@@ -8,7 +8,9 @@
           <template v-for="(item,index) in items">
             <v-list-item :key="index">
               <v-list-item-content>
-                <v-list-item-title v-text="item.title"></v-list-item-title>
+                <h3><b>
+                  <v-list-item-title v-text="item.title"></v-list-item-title>
+                </b></h3>
                 <span><span class="text--secondary">{{ item.zglaszajacy }}</span> &mdash; {{item.description}}</span>
               </v-list-item-content>
             </v-list-item>
@@ -62,6 +64,8 @@
             </v-col>
           </v-row>
         </v-form>
+        <v-divider></v-divider>
+        <v-btn class="send_button">SEND</v-btn>
       </v-card>
     </v-row>
   </v-container>
@@ -72,6 +76,7 @@ export default {
   name: "HelpPage",
 
   data: () => ({
+
     new_title: '',
     valid: false,
     new_imie: '',
@@ -80,19 +85,19 @@ export default {
 
     items: [
       {
-        title: "Problem z kotem",
-        description: "dassad",
-        zglaszajacy: "Bacia Gienia"
+        title: "Pomoc przy noszeniu zakupów ",
+        description: "Czy jakiś młodzieniec mógłby pomóoc mi zanieść zakupy do mieszkania?",
+        zglaszajacy: "Halina Kaczmarek"
       },
       {
-        title: "Problem z kotem2",
-        description: "dassad",
-        zglaszajacy: "Bacia Gienia"
+        title: "Za dużo zupy",
+        description: "Nie chce ktoś może zupy? Ugotowałam za dużo i nie chce żeby się zmarnowało",
+        zglaszajacy: "Anna Nowak"
       },
       {
-        title: "Problem z kotem3",
-        description: "dassadasdsad",
-        zglaszajacy: "Bacia Gienia"
+        title: "Karmienie kota",
+        description: "Mógłby ktoś zająć się moim kotem przez weekend? Muszę pilnie wyjechać do pracy",
+        zglaszajacy: "Filip Przygoda"
       },
     ]
   }),

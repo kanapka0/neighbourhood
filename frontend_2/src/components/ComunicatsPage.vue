@@ -3,11 +3,13 @@
     <v-row justify="center">
       <v-card elevation="15">
         <v-card-title><h1>Ogłoszenia</h1></v-card-title>
-        <v-list>
+        <v-list two-line>
           <template v-for="(item,index) in new_items">
             <v-list-item :key="index">
               <v-list-item-content>
-                <v-list-item-title v-text="item.title"></v-list-item-title>
+                <h3><b>
+                  <v-list-item-title v-text="item.title"></v-list-item-title>
+                </b></h3>
                 <span><span class="text--secondary">{{ item.autor }}</span> &mdash; {{item.description1}}</span>
               </v-list-item-content>
             </v-list-item>
@@ -18,26 +20,21 @@
   </v-container>
 </template>
 
+
 <script>
 export default {
   name: "ComunicatsPage",
   data: () => ({
     new_items: [
       {
-        title: 'NewName',
-        autor: 'asdasd',
-        description1: 'asdasd',
+        title: 'Pobór krwi',
+        autor: 'Lokalny ośrodek zdrowia',
+        description1: 'Zapraszamy wszystkie osoby pełnoletnie aby oddały krew w najbliższą środe w ośrodku zdrowia',
       },
       {
-        title: 'NewName',
-        autor: 'asdasd',
-        description1: 'asdasd',
-      },
-      {
-        title: 'NewName',
-        autor: 'asdasd',
-        description1: 'asdasd',
-
+        title: 'Sprzątanie parku',
+        autor: 'Spółdzielnia mieszkaniowa "Cichy raj"',
+        description1: 'Spółdzielnia mieszkaniowa "Cichy raj" organizuje szprzątanie parku przy ulicy miłej w piątek o 14',
       },
     ]
   }),
