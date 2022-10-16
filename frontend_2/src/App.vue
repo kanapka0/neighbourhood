@@ -32,7 +32,7 @@
         target="_blank"
         text
       >
-        <span class="mr-2">Latest Release</span>
+        <span class="mr-2">Back To Menu</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
@@ -49,7 +49,7 @@ export default {
   name: 'App',
   methods: {
     baseClickMethod() {
-      this.$router.push({path: '/about'})
+      this.$router.push({path: '/'})
     }
   },
 

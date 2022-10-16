@@ -3,12 +3,12 @@
     <v-row justify="center">
       <v-card elevation="15">
         <v-card-title><h1>Ogłoszenia</h1></v-card-title>
-        <v-list two-line>
-          <template v-for="(item,index) in items">
+        <v-list>
+          <template v-for="(item,index) in new_items">
             <v-list-item :key="index">
               <v-list-item-content>
-                <v-list-item-title v-text="item.name"></v-list-item-title>
-                <span><span class="text--secondary">{{ item.autors }}</span> &mdash; {{item.description}}</span>
+                <v-list-item-title v-text="item.title"></v-list-item-title>
+                <span><span class="text--secondary">{{ item.autor }}</span> &mdash; {{item.description1}}</span>
               </v-list-item-content>
             </v-list-item>
           </template>
@@ -22,21 +22,21 @@
 export default {
   name: "ComunicatsPage",
   data: () => ({
-    items: [
+    new_items: [
       {
-        name: 'NewName',
-        autors: 'asdasd',
-        description: 'asdasd',
+        title: 'NewName',
+        autor: 'asdasd',
+        description1: 'asdasd',
       },
       {
-        name: 'NewName',
-        autors: 'asdasd',
-        description: 'asdasd',
+        title: 'NewName',
+        autor: 'asdasd',
+        description1: 'asdasd',
       },
       {
-        name: 'NewName',
-        autors: 'asdasd',
-        description: 'asdasd',
+        title: 'NewName',
+        autor: 'asdasd',
+        description1: 'asdasd',
 
       },
     ]
