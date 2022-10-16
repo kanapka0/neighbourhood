@@ -7,18 +7,46 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="base.css">
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="sidebars.css" rel="stylesheet">-->
 
     <title>neighbourhood</title>
+    
+    <script>
+        /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+        function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+        function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+        } 
+    </script>
   </head>
  <body>
-    <div class="wrapper">
-      <div class="header">
-        <button class="menu_button"><img src="menu_icon.png"></button>
-        <img src="logo.png">
-      </div>
-      <div class="menu">
 
-      </div>
+  
+  <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Petycje</a>
+        <a href="#">Wydarzenia</a>
+        <a href="#">Zgols problem</a>
+        <a href="#">Mapa</a>
+        <a href="#">Kontakt</a>
     </div>
+      
+    <div id="main">
+      <div class="header" id="myHeader"> 
+      <button class="openbtn" onclick="openNav()">&#9776;</button>
+      <h2 style="display:inline;">MyNeighbourhood</h2>
+      </div> 
+      <div class="content"><h1>Chcemy lawki na piastowskiej</h1><h2>Piastowska</h2></div>  
+    </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </body>
 </html>
