@@ -1,0 +1,38 @@
+{% extends "reports/base.html" %}
+{% block content %}
+    <div >
+        {% if announcements %}
+            <ul>
+            {% for announcement in announcements %}
+                <li>
+                    {{ announcement.title }}
+                    <br>
+                    {{ announcement.name }}
+                    <br>
+                    {{ announcement.description }}
+                    <br>
+                    <form method="POST" action="{% url 'com' announcement.id  %}">
+                    {% csrf_token %}
+                    <input type="submit" value="dodaj komentarz">
+
+                    </form>
+                    Komentarze
+                    {% for com in comments %}
+                        {% if com.title_id == announcement.id %}
+                            <br>
+                            {{com.comment }}
+                        {% endif %}
+
+                    {% endfor %}
+
+
+
+
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <i>Brak nowych ogloszen</i>
+        {% endif %}
+    </div>
+{% endblock content %}

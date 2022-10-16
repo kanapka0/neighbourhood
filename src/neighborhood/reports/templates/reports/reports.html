@@ -1,19 +1,25 @@
 {% extends "reports/base.html" %}
-
 {% block content %}
-    <div id="cart">
-        Zawartość koszyka:
-        {% if request.session.cart %}
+    <div >
+        {% if reports %}
             <ul>
-            {% for reports_id, reports_value in request.session.cart.items %}
+            {% for report in reports %}
                 <li>
-                    {{ reports_value.product_name }}, lokalizacja: {{ reports_value.location }}
-                     plusy: {{ product_value.product_value }} )
+                    {{ report.name }}, lokalizacja: {{ report.location }}
+
+                    <form method="POST" action="{% url 'update' report.id  %}">
+                    {% csrf_token %}
+                    plusy: {{ report.value }}
+                    <input type="submit" value="dodaj">
+
+                    </form>
+
+
                 </li>
             {% endfor %}
             </ul>
         {% else %}
-            <i>Koszyk jest pusty</i>
+            <i>Brak nowych ogloszen</i>
         {% endif %}
     </div>
 {% endblock content %}

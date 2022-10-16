@@ -1,0 +1,24 @@
+{% extends "reports/base.html" %}
+{% block content %}
+    <div >
+        {% if reports %}
+            <ul>
+            {% for report in reports %}
+
+                <li>
+                    {{ report.title }}
+                    <br>
+                    {{report.description}}
+                    <br>
+                    {{report.name}}
+
+
+                </li>
+
+            {% endfor %}
+            </ul>
+        {% else %}
+            <i>Brak nowych ogloszen</i>
+        {% endif %}
+    </div>
+{% endblock content %}
