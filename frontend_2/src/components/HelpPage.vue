@@ -17,11 +17,51 @@
       </v-card>
       <v-card>
         <v-card-title><h2>Zgłoszenie</h2></v-card-title>
-        Imie:
-        Nazwisko:
-        Tytuł:
-        Opis:
+        <v-form v-model="valid">
+          <v-row>
+            <v-col
+                cols="12"
+                md="4"
+            >
+              <v-text-field
+                  v-model="new_title"
+                  label="Title"
+                  required
+              ></v-text-field>
+            </v-col>
+            <v-col
+                cols="12"
+                md="4"
+            >
+              <v-text-field
+                  v-model="new_imie"
+                  label="First name"
+                  required
+              ></v-text-field>
+            </v-col>
 
+            <v-col
+                cols="12"
+                md="4"
+            >
+              <v-text-field
+                  v-model="new_nazwisko"
+                  label="Last name"
+                  required
+              ></v-text-field>
+            </v-col>
+            <v-col
+                cols="12"
+                md="12"
+            >
+              <v-text-field
+                  v-model="new_description"
+                  label="Description"
+                  required
+              ></v-text-field>
+            </v-col>
+          </v-row>
+        </v-form>
       </v-card>
     </v-row>
   </v-container>
@@ -32,6 +72,12 @@ export default {
   name: "HelpPage",
 
   data: () => ({
+    new_title: '',
+    valid: false,
+    new_imie: '',
+    new_nazwisko: '',
+    new_description: '',
+
     items: [
       {
         title: "Problem z kotem",
@@ -58,5 +104,8 @@ export default {
   width: 49%;
   padding-top: 1%;
   margin: 1px;
+}
+.send_button{
+  width: 100%;
 }
 </style>
